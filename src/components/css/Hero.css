@@ -9,7 +9,7 @@
   background-color: rgba(35, 133, 109, 1);
   font-size: 0.7rem;
   padding: 0.6rem 2rem 0.6rem 2rem;
-  max-width: 1100px;
+  max-width: 1200px;
   /* max-width: 1000px; */
 }
 
@@ -39,3 +39,89 @@
   gap: 0.2rem;
   font-size: 0.6rem;
 }
+
+/* Nav */
+
+.main-nav-container {
+
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  align-items: center;
+  padding: 0.6rem 2rem 0.6rem 2rem;
+  max-width: 1100px; 
+  margin: 0 auto;
+  
+}
+
+
+
+li div.shop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div .list-container ul {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+div .list-container ul li {
+  cursor: pointer;
+}
+
+.logo-wrapper {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+div h1.Logo{
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+div.container-icon{
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  color: rgba(35, 166, 240, 1);
+  ;
+  /* justify-content: space-between; */
+}
+
+div.login-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.cart-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.hrt-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.search-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Hero */
+/* width: Hug (1,146px)px;
+height: Hug (776px)px;
+top: 4px;
+left: 147px;
+padding: 80px 0px 80px 0px;
+gap: 0px;
+opacity: 0px; */
+
