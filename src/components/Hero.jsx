@@ -5,13 +5,17 @@ import { FaInstagram } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa6";
+import { BsCartDash } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import { IoMdHeartEmpty } from "react-icons/io";
 import "./css/Hero.css";
 
 const Hero = () => {
   return (
     <>
       <div className="wrapper">
-      
         <div className="nav-container">
           <div className="nav-inner-flex">
             <div className="icon-container1">
@@ -32,6 +36,48 @@ const Hero = () => {
             </div>
           </div>
         </div>
+      </div>
+      <nav>
+        <div className="main-nav-container">
+          <div className="logo-wrapper">
+            <h1 className="Logo">Bandage</h1>
+            <div className="list-container">
+              <ul>
+                <li>Home</li>
+                <li>
+                  <div className="shop-container">
+                    <p>Shop</p>
+                    <MdOutlineKeyboardArrowDown />
+                  </div>
+                </li>
+                <li>About</li>
+                <li>Blog</li>
+                <li>Contact</li>
+                <li>Pages</li>
+              </ul>
+            </div>
+          </div>
+          <div className=" container-icon">
+            <div className="login-icon">
+              <FaRegUser />
+              <p>Login / Logout</p>
+            </div>
+            <div className="search-container">
+              <BsSearch />
+              <div className="cart-icon">
+                <BsCartDash />
+                <p>1</p>
+              </div>
+              <div className="hrt-icon">
+                <IoMdHeartEmpty />
+                <p>1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div className="herro">
+
       </div>
     </>
   );
