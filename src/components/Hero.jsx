@@ -77,7 +77,30 @@ const Hero = () => {
         </div>
       </nav>
       <div className="herro">
-
+        <div class="grid-container">
+          <div class="item item1">
+            <p>5 Items</p>
+            <h2>Furniture</h2>
+            <a href="#">Read More</a>
+          </div>
+          <div class="item item2">
+            <p>5 Items</p>
+            <h4>Furniture</h4>
+            <a href="#">Read More</a>
+          </div>
+          <div class="item item3">
+            
+            <p>5 Items</p>
+            <h4>Furniture</h4>
+            <a href="#">Read More</a>
+          </div>
+          <div class="item item4">
+            
+            <p>5 Items</p>
+            <h4>Furniture</h4>
+            <a href="#">Read More</a>
+          </div>
+        </div>
       </div>
     </>
   );
