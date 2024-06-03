@@ -1,6 +1,5 @@
 .footer-wrap {
   height: 180px;
-  /* border: 1px solid red; */
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -47,6 +46,7 @@ div.cover-p {
   text-align: left;
   background-color: rgba(250, 250, 250, 1);
 }
+
 .paragrph {
   max-width: 1000px;
   margin: 0 auto;
@@ -54,14 +54,13 @@ div.cover-p {
   display: flex;
   align-items: center;
   color: rgba(115, 115, 115, 1);
-  /* 
-    margin-top: 10px; */
+  
 }
 
 div.footer-txt-wrapper {
   display: flex;
   gap: 3rem;
-  /* margin-top: 0.rem; */
+  
   padding: 1rem;
 }
 
@@ -72,6 +71,7 @@ div.input-wrap {
 div.input-wrap p {
   color: rgba(115, 115, 115, 1);
 }
+
 div a {
   text-decoration: none;
   color: rgba(115, 115, 115, 1);
