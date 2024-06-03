@@ -24,7 +24,7 @@ const CallToAction = () => {
               <p className="num">$16.48</p>
             </div>
             <div className="flex">
-              <button>ADD YOUR CALL TO ACTION</button>
+              <button className="action-btn">ADD YOUR CALL TO ACTION</button>
             </div>
           </div>
         </div>

@@ -64,7 +64,7 @@ div .num {
   margin-bottom: 1rem;
 }
 
-div button {
+div button.action-btn {
   width: 292px;
   height: 52px;
   padding: 15px 40px 15px 40px;
