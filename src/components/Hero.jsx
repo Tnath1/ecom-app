@@ -10,6 +10,7 @@ import { FaRegUser } from "react-icons/fa6";
 import { BsCartDash } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { BiMenuAltRight } from "react-icons/bi";
 import "./css/Hero.css";
 
 const Hero = () => {
@@ -72,7 +73,11 @@ const Hero = () => {
                 <IoMdHeartEmpty />
                 <p>1</p>
               </div>
+            
             </div>
+            <div className="Handmenu">
+                <BiMenuAltRight />
+              </div>
           </div>
         </div>
       </nav>
@@ -89,13 +94,11 @@ const Hero = () => {
             <a href="#">Read More</a>
           </div>
           <div class="item item3">
-            
             <p>5 Items</p>
             <h4>Furniture</h4>
             <a href="#">Read More</a>
           </div>
           <div class="item item4">
-            
             <p>5 Items</p>
             <h4>Furniture</h4>
             <a href="#">Read More</a>
