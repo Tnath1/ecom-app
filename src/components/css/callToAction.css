@@ -3,7 +3,7 @@ div.txt-wapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/src/assets/Heroimg/cup\ &spoonbg.png");
+  background-image: url("/src/assets/Heroimg/cup.png");
   background-size: cover;
   background-position: center;
   width: 100%;

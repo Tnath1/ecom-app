@@ -257,7 +257,7 @@ div.item a {
   .item4 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-image: url("/src/assets/Heroimg/herofour\ \(2\).png");
+    background-image: url("/src/assets/Heroimg/herofour.png");
     background-size: cover;
     background-position: center;
     width: 100%;
