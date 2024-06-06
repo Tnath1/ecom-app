@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import BestSeller from "./components/BestSeller";
@@ -10,8 +9,8 @@ function App() {
     <div>
       <Hero />
       <BestSeller />
-      <CallToAction/>
-      <Footer/>
+      <CallToAction />
+      <Footer />
     </div>
   );
 }

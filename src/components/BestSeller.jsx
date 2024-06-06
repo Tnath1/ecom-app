@@ -1,11 +1,10 @@
 import React from "react";
+import { useGetAllProductsQuery } from "../features/product.api";
 
 const BestSeller = () => {
-  return (
-    <>
-      <h1>Bestseller</h1>
-    </>
-  );
+  const { data, error, isLoading, isSuccess } = useGetAllProductsQuery();
+  console.log(data)
+  return ;
 };
 
 export default BestSeller;
