@@ -1,3 +1,4 @@
+// services/api.js
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const productApi = createApi({
@@ -5,23 +6,41 @@ export const productApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
   endpoints: (builder) => ({
     getAllProducts: builder.query({
-      query: () => "products",
+      query: ({ skip = 0, limit = 10 }) => `products?skip=${skip}&limit=${limit}`,
     }),
   }),
 });
 
 export const { useGetAllProductsQuery } = productApi;
 
-// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-// export const pokemonApi = createApi({
-//   reducerPath: 'pokemonApi',
-//   baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+// export const productApi = createApi({
+//   reducerPath: "productApi",
+//   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
 //   endpoints: (builder) => ({
-//     getPokemonByName: builder.query({
-//       query: (name) => `pokemon/${name}`,
+//     getAllProducts: builder.query({
+//       query: () => "products",
 //     }),
 //   }),
-// })
+// });
 
-// export const { useGetPokemonByNameQuery } = pokemonApi
+// export const { useGetAllProductsQuery } = productApi;
+
+
