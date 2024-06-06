@@ -177,7 +177,7 @@ div.Handmenu {
 .item4 {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background-image: url("/src/assets/Heroimg/herofour\ \(2\).png");
+  background-image: url("/src/assets/Heroimg/herofour.png");
   background-size: cover;
   background-position: center;
   width: 100%;

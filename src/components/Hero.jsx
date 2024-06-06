@@ -73,32 +73,31 @@ const Hero = () => {
                 <IoMdHeartEmpty />
                 <p>1</p>
               </div>
-            
             </div>
             <div className="Handmenu">
-                <BiMenuAltRight />
-              </div>
+              <BiMenuAltRight />
+            </div>
           </div>
         </div>
       </nav>
       <div className="herro">
-        <div class="grid-container">
-          <div class="item item1">
+        <div className="grid-container">
+          <div className="item item1">
             <p>5 Items</p>
             <h2>Furniture</h2>
             <a href="#">Read More</a>
           </div>
-          <div class="item item2">
+          <div className="item item2">
             <p>5 Items</p>
             <h4>Furniture</h4>
             <a href="#">Read More</a>
           </div>
-          <div class="item item3">
+          <div className="item item3">
             <p>5 Items</p>
             <h4>Furniture</h4>
             <a href="#">Read More</a>
           </div>
-          <div class="item item4">
+          <div className="item item4">
             <p>5 Items</p>
             <h4>Furniture</h4>
             <a href="#">Read More</a>
