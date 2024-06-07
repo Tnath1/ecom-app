@@ -2,13 +2,107 @@ div.flex-products {
   max-width: 1000px;
   display: flex;
   margin: 0 auto;
-  align-items: center;
-  gap: 2rem;
-  /* flex-wrap: wrap; */
-  border: 1px solid rgb(0, 17, 255) ;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  
 }
 
-div.product-card{
-    border: 1px solid red ;
-    width: 30rem;
+div.product-img img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
+
+div.product-card {
+  border: 2px solid rgba(115, 115, 115, 0.3);
+  border-radius: 5px;
+  width: 180px;
+  cursor: pointer;
+}
+
+div.txt-flex {
+  display: flex;
+  margin: 0 auto;
+}
+
+div.imgtext-below {
+  padding: 0.6rem;
+}
+
+div.imgtext-below h4 {
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+}
+
+div.imgtext-below p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: center;
+  color: rgba(115, 115, 115, 1);
+}
+
+div.price-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+div.price-container div.discount {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+  color: rgba(189, 189, 189, 1);
+  /* text-decoration: line-through; */
+}
+
+div.price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+  color: rgba(35, 133, 109, 1);
+}
+
+button.load-more {
+  
+  width: 261px;
+  height: 52px;
+  padding: 15px 40px 15px 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: center;
+  color: rgba(35, 166, 240, 1);
+  background-color: white;
+  border: 2px solid rgba(35, 166, 240, 1);
+}
+
+div.loading-container{
+  color: rgba(35, 166, 240, 1);
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+div.div-button{
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 3rem 0;
+} 
