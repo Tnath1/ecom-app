@@ -12,6 +12,7 @@ import { BsSearch } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BiMenuAltRight } from "react-icons/bi";
 import "./css/Hero.css";
+import BestSellerHeading from "./BestSellerHeading";
 
 const Hero = () => {
   return (
@@ -104,6 +105,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <BestSellerHeading />
     </>
   );
 };
