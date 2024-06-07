@@ -55,19 +55,15 @@ const Footer = () => {
             <div>
               <h4>Features</h4>
               <a href="">
-                {" "}
                 <p>Business Marketing</p>
               </a>
               <a href="#">
-                {" "}
                 <p>User Analytic</p>
               </a>
               <a href="#">
-                {" "}
                 <p>Live Chat</p>
               </a>
               <a href="#">
-                {" "}
                 <p>Unlimited Support</p>
               </a>
             </div>
@@ -83,7 +79,7 @@ const Footer = () => {
                 <p>Customers</p>
               </a>
               <a href="#">
-                {" "}
+              
                 <p>API</p>
               </a>
             </div>
