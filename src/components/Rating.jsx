@@ -15,7 +15,7 @@ import imgGridone from "../components/imgcomponent/unsplash_one.png";
 
 const Rating = () => {
   return (
-    <>
+    <div className="rating-main-container">
       <div className="rating-container">
         <div className="rate-container">
           <h4>What they say about us</h4>
@@ -97,12 +97,12 @@ const Rating = () => {
           />
           <img
             src={imgGridNine}
-            alt=""
+            alt="imgGridNine  "
             style={{ width: "142.77px", height: "142.77px" }}
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

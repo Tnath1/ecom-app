@@ -1,10 +1,12 @@
 .footer-wrap {
-  height: 180px;
+  /* height: 180px; */
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .logo {
@@ -41,7 +43,6 @@ div.logo p {
 div.cover-p {
   font-size: 14px;
   font-weight: 700;
-
   letter-spacing: 0.20000000298023224px;
   text-align: left;
   background-color: rgba(250, 250, 250, 1);
@@ -60,6 +61,7 @@ div.footer-txt-wrapper {
   display: flex;
   gap: 3rem;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 
 div.input-wrap {
@@ -68,6 +70,10 @@ div.input-wrap {
 
 div.input-wrap p {
   color: rgba(115, 115, 115, 1);
+}
+
+div.cover-p {
+  padding: 0 0 0 2rem;
 }
 
 div a {
