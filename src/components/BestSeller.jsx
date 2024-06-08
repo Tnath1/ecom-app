@@ -1,45 +1,7 @@
-// import React from "react";
-// import { useGetAllProductsQuery } from "../features/product.api";
-
-// const BestSeller = () => {
-//   const { data, error, isLoading, isSuccess } = useGetAllProductsQuery();
-//   console.log(data);
-//   if (isLoading) return <div className="Loading">Loading...</div>;
-//   if (error) return <div>Error: {error.message}</div>;
-
-//   if (isSuccess && data) {
-//     return (
-//       <div>
-//         <div></div>
-//         <div>
-//           {data.products.map((product) => (
-//             <div key={product.id}>
-//               <img
-//                 src={product.images}
-//                 alt={product.title}
-//                 style={{ width: "100px", height: "100px" }}
-//               />
-//               <p>{product.title}</p>
-//               <p>{product.description}</p>
-//               <div>
-//                 <div>{product.discountPercentage}</div>
-//                 <div>{product.price}</div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   return null;
-// };
-
-// export default BestSeller;
 import "../components/css/bestSeller.css";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGetAllProductsQuery } from "../features/product.api";
-
 
 const BestSeller = () => {
   const [page, setPage] = useState(1);
@@ -49,6 +11,7 @@ const BestSeller = () => {
   });
 
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isSuccess && data) {
@@ -64,13 +27,20 @@ const BestSeller = () => {
     );
   if (error) return <div>Error: {error.message}</div>;
 
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <>
       <div>
-        
         <div className="flex-products">
           {products.map((product) => (
-            <div className="product-card" key={product.id}>
+            <div
+              className="product-card"
+              key={product.id}
+              onClick={() => handleProductClick(product.id)}
+            >
               <div className="product-img">
                 <img
                   src={product.images[0]}
