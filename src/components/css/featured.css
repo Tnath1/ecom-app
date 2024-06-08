@@ -30,22 +30,22 @@ div.feature-body {
 }
 
 div.feat-box {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 328px;
   height: 606px;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 div.feat-txt {
   width: 348px;
   height: 306px;
-  padding: 25px 25px 35px 25px;
+  padding: 25px;
 }
 
 img.featimg {
   width: 100%;
   height: 300px;
- 
 }
 
 p.overimg {
@@ -61,4 +61,81 @@ p.overimg {
   background: rgba(231, 64, 64, 1);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
   color: white;
+}
+
+div.feat-link {
+  display: flex;
+  gap: 6px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+  margin: 0 0 1rem 0;
+}
+
+div.feat-link p.firstp-feat {
+  color: rgba(142, 194, 242, 1);
+}
+
+div.feat-txt h5 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+  color: rgba(37, 43, 66, 1);
+}
+
+div.feat-txt .txt {
+  color: rgba(115, 115, 115, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+  padding-right: 10px;
+  margin: 1rem 0 1rem 0;
+}
+
+div.feat-txt .date-comment {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+}
+
+div.feat-txt .date-comment .date {
+  display: flex;
+  gap: 5px;
+}
+
+div.feat-txt .date-comment .comment {
+  display: flex;
+  gap: 5px;
+}
+
+div.feat-txt div.learnmore-feat {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: rgba(115, 115, 115, 1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+  /* background-color: black; */
+}
+
+
+div.feat-txt .feat-icon {
+  color: rgba(35, 166, 240, 1);
 }

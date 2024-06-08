@@ -1,6 +1,9 @@
 import React from "react";
 import "../components/css/featured.css";
 import Feat from "../components/Feat";
+import featOne from "./imgcomponent/feat-one.png";
+import featTwo from "./imgcomponent/feat-two.png";
+import featThree from "./imgcomponent/feat-three.png";
 
 const Featured = () => {
   return (
@@ -12,9 +15,9 @@ const Featured = () => {
         </div>
       </div>
       <div className="feature-body">
-        <Feat />
-        <Feat />
-        <Feat />
+        <Feat imgSrc={featOne} altText="featOne" />
+        <Feat imgSrc={featTwo} altText="featOne" />
+        <Feat imgSrc={featThree} altText="featOne" />
       </div>
     </div>
   );
