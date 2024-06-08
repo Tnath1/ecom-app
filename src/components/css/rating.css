@@ -8,6 +8,11 @@ div.rating-container {
   flex-wrap: wrap;
   padding-top: 2rem;
 }
+
+div.rating-main-container{
+  margin: 4rem 0 7rem 0;
+}
+
 div.picture-container {
   flex-wrap: wrap;
   display: flex;
