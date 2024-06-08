@@ -1,0 +1,24 @@
+/* Feature Header design */
+
+div.feat-txt-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0 1rem 0;
+}
+
+div.feat-txt-container div h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0.20000000298023224px;
+}
+
+/* Main feat design rendering as a component */
+div.feature-body{
+  
+}

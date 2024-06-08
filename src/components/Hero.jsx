@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { MdLocalPhone } from "react-icons/md";
 import { LuMail } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
@@ -15,6 +16,11 @@ import "./css/Hero.css";
 import BestSellerHeading from "./BestSellerHeading";
 
 const Hero = () => {
+  const [navVisible, setNavVisible] = useState(false);
+
+  const toggleNav = () => {
+    setNavVisible(!navVisible);
+  };
   return (
     <>
       <div className="wrapper">
@@ -43,7 +49,7 @@ const Hero = () => {
         <div className="main-nav-container">
           <div className="logo-wrapper">
             <h1 className="Logo">Bandage</h1>
-            <div className="list-container">
+            <div className={`list-container  ${navVisible ? "visible" : ""}`}>
               <ul>
                 <li>Home</li>
                 <li>
@@ -76,7 +82,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="Handmenu">
-              <BiMenuAltRight />
+              <BiMenuAltRight onClick={toggleNav} />
             </div>
           </div>
         </div>
@@ -105,7 +111,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <BestSellerHeading h2Text="BESTSELLER PRODUCTS"/>
+      <BestSellerHeading h2Text="BESTSELLER PRODUCTS" />
     </>
   );
 };

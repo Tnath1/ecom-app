@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import CallToAction from "./components/CallToAction";
 import Services from "./components/Services";
 import Rating from "./components/Rating";
+import Featured from "./components/Featured";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Hero />
       <BestSeller />
       <Services/>
+      <Featured/>
       <Rating/>
       <CallToAction />
       <Footer />
