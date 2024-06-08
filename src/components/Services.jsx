@@ -1,9 +1,9 @@
 import React from "react";
-import BestSellerHeading from "../BestSellerHeading";
-import iconOne from "../componenticon/service-one.png";
-import iconTwo from "../componenticon/service-two.png";
-import iconThree from "../componenticon/service-three.png";
-import "./service.css";
+import BestSellerHeading from "./BestSellerHeading";
+import iconOne from "../components/componenticon/service-one.png";
+import iconTwo from "../components/componenticon/service-two.png";
+import iconThree from "../components/componenticon/service-three.png";
+import "./css/service.css";
 
 const Services = () => {
   return (
