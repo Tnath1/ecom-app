@@ -19,6 +19,46 @@ div.feat-txt-container div h2 {
 }
 
 /* Main feat design rendering as a component */
-div.feature-body{
-  
+div.feature-body {
+  display: flex;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+div.feat-box {
+  border: 1px solid black;
+  width: 328px;
+  height: 606px;
+  position: relative;
+}
+
+div.feat-txt {
+  width: 348px;
+  height: 306px;
+  padding: 25px 25px 35px 25px;
+}
+
+img.featimg {
+  width: 100%;
+  height: 300px;
+ 
+}
+
+p.overimg {
+  position: absolute;
+  z-index: 1;
+  width: 20%;
+  height: 24 px;
+  top: 20px;
+  left: 20px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 3px;
+  opacity: 0px;
+  background: rgba(231, 64, 64, 1);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  color: white;
 }

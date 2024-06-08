@@ -1,12 +1,14 @@
 import React from "react";
+import featOne from "./imgcomponent/feat-one.png"
+import { ImAlarm } from "react-icons/im";
 
 const Feat = () => {
   return (
     <div>
-      <div>
-        <img src="" alt="" />
-        <p className="overimg"></p>
-        <div>
+      <div className="feat-box">
+      <img className="featimg" src={featOne} alt="featOne" />
+        <p className="overimg">NEW</p>
+        <div className="feat-txt">
           <div>
             <p>Google</p>
             <p>Trending</p>
@@ -18,9 +20,8 @@ const Feat = () => {
             keystroke away.
           </p>
           <div>
-            
             <div>
-              <img src="" alt="" />
+              <ImAlarm />
               <p>22 April 2021</p>
             </div>
             <div>
