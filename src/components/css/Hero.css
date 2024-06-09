@@ -113,21 +113,12 @@ nav {
   margin-bottom: 25px;
 }
 
-/* Hand burger menu */
-div.Handmenu {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
 
 /* working on this styles */
 
-.list-container.visible {
+/* .list-container.visible {
   display: block;
-}
+} */
 
 /* Hero */
 
@@ -209,13 +200,13 @@ div.item a {
 }
 
 @media (max-width: 900px) {
-  div.list-container {
+   /* div.list-container {
     display: none;
-  }
-
+  } */
+/*
   div.Handmenu {
     display: flex;
-  }
+  } */
 
   .grid-container {
     display: grid;

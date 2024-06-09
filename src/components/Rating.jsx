@@ -58,47 +58,47 @@ const Rating = () => {
           <img
             src={imgGridone}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridTwo}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridThree}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridFour}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridFive}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridSix}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridSeven}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridEight}
             alt=""
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
           <img
             src={imgGridNine}
             alt="imgGridNine  "
-            style={{ width: "142.77px", height: "142.77px" }}
+            style={{ width: "135px", height: "135px" }}
           />
         </div>
       </div>

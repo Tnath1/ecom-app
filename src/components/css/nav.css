@@ -1,0 +1,115 @@
+
+/* Hand burger menu */
+div.Handmenu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+
+
+@media (max-width: 900px) {
+  /* div.list-container {
+    display: none;
+  } */
+
+  div.search-flex{
+    display: none;
+  }
+  div.list-container ul li {
+    transition: box-shadow 0.5s ease, padding 0.3s ease;
+    color: black;
+  }
+
+  div.list-container ul li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 7px;
+    border-radius: 5px;
+  }
+
+  div.list-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 40%; /* Full height */
+    background: rgba(29, 27, 27, 0.8); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column; /* Vertical menu for smaller screens */
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 1rem 0 0;
+    border-radius: 5px;
+    /* max-width: 1000px; */
+    /* margin: 0 auto; */
+  }
+
+  div.list-container ul {
+    flex-direction: column; /* Vertical menu items */
+  }
+
+  div.list-container li {
+    padding: 0.4rem;
+    color: white;
+  }
+
+  div.list-container li a {
+    color: white; /* White text for better contrast */
+    font-size: 1.5rem;
+  }
+
+  /* Slide in when visible */
+  div.list-container.visible {
+    right: 0;
+  }
+
+  
+  div.search-flex{
+    display: none;
+  }
+
+  div.Handmenu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 550px) {
+  div.list-container {
+    margin: 4.5rem 1rem 0 0;
+    /* padding: 1rem; */
+    height: 50%;
+    width: 60%;
+  }
+
+  div.list-container li {
+    padding: 0.rem;
+  }
+
+  div.search-flex{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+
+/* @media (max-width: 600px) { */
+    /* div.list-container {
+      margin: 4.5rem 1rem 0 0;
+    } */
+/*   
+    div.search-flex{
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  } */
