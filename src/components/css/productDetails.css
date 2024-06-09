@@ -1,0 +1,29 @@
+div.best-seller-product-container{
+    background: rgba(250, 250, 250, 1);
+
+margin: 0 0 4rem 0;
+}
+
+div.best-seller-product-container .para-bspc{
+ 
+font-size: 24px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: 0.10000000149011612px;
+/* text-align: left; */
+max-width: 1000px;
+
+padding: 3rem 0 3rem 0;
+margin: 0 auto;
+}
+
+div.strip-more-container{
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+}

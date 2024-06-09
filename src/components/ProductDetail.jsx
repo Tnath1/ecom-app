@@ -1,23 +1,13 @@
-// import React from "react";
-// import "./css/productDetails.css";
-// import BestSeller from "./BestSeller";
-
-// const ProductDetail = () => {
-//   return (
-//     <div>
-//       ProductDetail
-//       <BestSeller />
-//     </div>
-//   );
-// };
-
-// export default ProductDetail;
-
-// components/ProductDetail.jsx
+import "./css/productDetails.css";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import BestSeller from "./BestSeller";
+import aws from "../components/componenticon/aws-icon.png"
+import hooli from "../components/componenticon/hooli-icon.png"
+import iya from "../components/componenticon/lya-icon.png"
+import random from "../components/componenticon/random-icon.png"
+import strip from "../components/componenticon/strip-icon.png"
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -48,7 +38,49 @@ const ProductDetail = () => {
         <p>Discount: {product.discountPercentage}%</p>
         <p>Rating: {product.rating}</p>
       </div>
-      <BestSeller />
+      <div className="best-seller-product-container">
+        <p className="para-bspc">BESTSELLER PRODUCTS</p>
+        <BestSeller />
+
+        <div className="strip-more-container">
+          <div className="strip-mmm" >
+            <img
+              src={aws}
+              alt="aws"
+              style={{ width: "146px", height: "59px" }}
+            />
+          </div>
+          <div  className="strip-mmm" >
+            <img
+              src={hooli}
+              alt="aws"
+              style={{ width: "146px", height: "59px" }}
+            />
+          </div>
+          <div  className="strip-mmm" >
+            <img
+              src={iya}
+              alt="aws"
+              style={{ width: "146px", height: "59px" }}
+            />
+          </div>
+          <div  className="strip-mmm" >
+            <img
+              src={random}
+              alt="aws"
+              style={{ width: "146px", height: "59px" }}
+            />
+          </div>
+          <div  className="strip-mmm" >
+            <img
+              src={strip}
+              alt="aws"
+              style={{ width: "146px", height: "59px" }}
+            />
+          </div>
+         
+        </div>
+      </div>
     </div>
   );
 };
