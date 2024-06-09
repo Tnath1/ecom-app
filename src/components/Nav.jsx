@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { MdLocalPhone } from "react-icons/md";
 import { LuMail } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
@@ -13,7 +12,7 @@ import { BsCartDash } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BiMenuAltRight } from "react-icons/bi";
-import "./css/nav.css"
+import "./css/nav.css";
 
 const Nav = () => {
   const [navVisible, setNavVisible] = useState(false);
@@ -21,6 +20,13 @@ const Nav = () => {
   const toggleNav = () => {
     setNavVisible(!navVisible);
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setNavVisible(false); // Set navVisible to false after navigation
+  }, [location]);
+
   return (
     <div>
       <div className="wrapper">
@@ -49,7 +55,7 @@ const Nav = () => {
         <div className="main-nav-container">
           <div className="logo-wrapper">
             <h1 className="Logo">Bandage</h1>
-            <div className={`list-container  ${navVisible ? "visible" : ""}`}>
+            <div className={`list-container ${navVisible ? "visible" : ""}`}>
               <ul>
                 <li>
                   <Link to="/">Home</Link>
@@ -62,14 +68,22 @@ const Nav = () => {
                     </div>
                   </Link>
                 </li>
-                <li>About</li>
-                <li>Blog</li>
-                <li>Contact</li>
-                <li>Pages</li>
+                <li>
+                  <Link>About</Link>
+                </li>
+                <li>
+                  <Link>Blog</Link>
+                </li>
+                <li>
+                  <Link>Contact</Link>
+                </li>
+                <li>
+                  <Link>Pages</Link>
+                </li>
               </ul>
             </div>
           </div>
-          <div className=" container-icon">
+          <div className="container-icon">
             <div className="login-icon">
               <FaRegUser />
               <p>Login / Logout</p>
@@ -86,6 +100,15 @@ const Nav = () => {
               </div>
             </div>
             <div className="Handmenu">
+              <div className="search-flex">
+                <div>
+                  <BsSearch />
+                </div>
+
+                <div>
+                  <BsCartDash />
+                </div>
+              </div>
               <BiMenuAltRight onClick={toggleNav} />
             </div>
           </div>
