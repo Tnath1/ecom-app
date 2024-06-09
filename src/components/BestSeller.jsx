@@ -202,6 +202,7 @@ const BestSeller = () => {
 
   if (isLoading && page === 1) return <div className="loading-container">Loading...</div>;
   if (error) return <div className="error-container">Error: {error.message}</div>;
+  console.log(data)
 
   return (
     <>
