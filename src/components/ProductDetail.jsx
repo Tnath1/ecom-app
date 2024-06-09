@@ -17,8 +17,8 @@ const ProductDetail = () => {
   if (!product)
     return (
       <div>
-        <div>
-          <p>Please select from the products Below</p>
+        <div className="p-not-product-container">
+          <p className="not-product">Please select from the products below <span className="warning">⚠⚠</span></p>
         </div>
         <BestSeller />
       </div>
