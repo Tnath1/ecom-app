@@ -17,7 +17,7 @@ div.picture-container {
   flex-wrap: wrap;
   display: flex;
   width: 464px;
-  height: 460.03px;
+  min-height: 460.03px;
   gap: 10px;
   align-items: center;
   justify-content: center;

@@ -13,6 +13,7 @@ import { BsCartDash } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BiMenuAltRight } from "react-icons/bi";
+import "./css/nav.css"
 
 const Nav = () => {
   const [navVisible, setNavVisible] = useState(false);
