@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
         <div className="cover-p">
           <div className="paragrph">
-            <p>Made With Love By Finland All Right Reserved </p>
+            <p>Made With Love By Arome UkpojuAll Right Reserved </p>
           </div>
         </div>
       </footer>
