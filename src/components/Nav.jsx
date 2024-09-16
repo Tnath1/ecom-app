@@ -13,9 +13,19 @@ import { BsSearch } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BiMenuAltRight } from "react-icons/bi";
 import "./css/nav.css";
+import SignInLogin from "../components/SignInLogin";
 
 const Nav = () => {
   const [navVisible, setNavVisible] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   const toggleNav = () => {
     setNavVisible(!navVisible);
@@ -24,7 +34,7 @@ const Nav = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setNavVisible(false); // Set navVisible to false after navigation
+    setNavVisible(false);
   }, [location]);
 
   return (
@@ -45,7 +55,7 @@ const Nav = () => {
           <div>
             <div className="icon-container">
               <p>Follow us :</p>
-              <FaInstagram /> <AiOutlineYoutube /> <FaFacebook />{" "}
+              <FaInstagram /> <AiOutlineYoutube /> <FaFacebook />
               <IoLogoTwitter />
             </div>
           </div>
@@ -86,7 +96,7 @@ const Nav = () => {
           <div className="container-icon">
             <div className="login-icon">
               <FaRegUser />
-              <p>Login / Logout</p>
+              <p onClick={openModal}>Login</p>
             </div>
             <div className="search-container">
               <BsSearch />
@@ -112,6 +122,7 @@ const Nav = () => {
               <BiMenuAltRight onClick={toggleNav} />
             </div>
           </div>
+          <SignInLogin isOpen={isModalOpen} onClose={closeModal} />
         </div>
       </nav>
     </div>
