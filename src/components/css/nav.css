@@ -1,22 +1,22 @@
-
 /* Hand burger menu */
 div.Handmenu {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.cart-icon {
+  color: rgba(35, 166, 240, 1);
+}
 
 @media (max-width: 900px) {
   /* div.list-container {
     display: none;
   } */
 
-  div.search-flex{
+  div.search-flex {
     display: none;
   }
   div.list-container ul li {
@@ -43,8 +43,6 @@ div.Handmenu {
     align-items: center;
     margin: 6rem 1rem 0 0;
     border-radius: 5px;
-    /* max-width: 1000px; */
-    /* margin: 0 auto; */
   }
 
   div.list-container ul {
@@ -66,8 +64,7 @@ div.Handmenu {
     right: 0;
   }
 
-  
-  div.search-flex{
+  div.search-flex {
     display: none;
   }
 
@@ -77,7 +74,6 @@ div.Handmenu {
     align-items: center;
     justify-content: center;
   }
-
 }
 
 @media (max-width: 550px) {
@@ -89,10 +85,10 @@ div.Handmenu {
   }
 
   div.list-container li {
-    padding: 0.rem;
+    padding: 0rem;
   }
 
-  div.search-flex{
+  div.search-flex {
     display: flex;
     gap: 20px;
     font-size: 20px;
@@ -100,9 +96,8 @@ div.Handmenu {
   }
 }
 
-
 /* @media (max-width: 600px) { */
-    /* div.list-container {
+/* div.list-container {
       margin: 4.5rem 1rem 0 0;
     } */
 /*   
