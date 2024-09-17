@@ -25,7 +25,7 @@ import { store } from "./data/Store.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home"; 
 import ProductDetail from "./components/ProductDetail"; 
-import SignInLogin from "./components/SignInLogin.jsx";
+import Cart from "./components/Cart.jsx";
 
 
 const router = createBrowserRouter([
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "product/:id", element: <ProductDetail /> },
-      { path: "SignIn/Login", element: <SignInLogin/> },
+      { path: "/cart", element: <Cart/> },
       // Add more routes as needed
     ],
   },

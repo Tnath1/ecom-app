@@ -1,0 +1,364 @@
+div.cart-container {
+  max-width: 1161px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
+}
+
+div.cart-container-wrapper {
+  background: rgba(250, 250, 250, 1);
+  padding: 4rem 0;
+}
+
+div.cart-bestseller {
+  padding-top: 4rem;
+}
+
+div.shopping-cart {
+  width: 654px;
+  height: 638px;
+  padding: 32px 32px 0px 32px;
+  border-radius: 5px;
+  /* border: 1px solid blue; */
+  background: white;
+}
+
+div.order-summary {
+  width: 451px;
+  height: 638px;
+  padding: 32px 32px 0px 32px;
+  border-radius: 5px;
+  /* border: 1px solid green; */
+  background-color: white;
+}
+
+/* the order summary starts  */
+
+div.h2-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+div.h2-container-sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+div.sumary-child {
+  display: flex;
+  width: 100px;
+  /* border: 1px solid ; */
+  text-align: right;
+  justify-content: flex-end;
+}
+div.summary-child p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: right;
+  color: rgba(18, 21, 23, 1);
+}
+
+h2.heading-one {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: rgba(18, 21, 23, 1);
+}
+
+h2.heading-two {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  letter-spacing: 0.002em;
+  text-align: left;
+  color: rgba(58, 60, 62, 1);
+}
+
+h2.heading-three{
+font-size: 16px;
+font-weight: 500;
+line-height: 22.4px;
+letter-spacing: 0.002em;
+text-align: left;
+
+}
+
+
+
+h2.heading-four{
+font-size: 20px;
+font-weight: 500;
+line-height: 28px;
+text-align: left;
+color: rgba(18, 21, 23, 1);
+
+}
+
+p.total-amnt{
+font-size: 20px;
+font-weight: 500;
+line-height: 28px;
+text-align: left;
+color: rgba(18, 21, 23, 1);
+
+}
+
+p.red-p {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.004em;
+  text-align: right;
+  color: rgba(245, 102, 102, 1);
+}
+
+p.last-p{
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.004em;
+  text-align: right;
+  color: rgba(245, 102, 102, 1);
+  margin-top: 2rem;
+}
+div.underline-checkout{
+  height: 1px;
+  width: 100%;
+  background:  rgba(220, 220, 220, 1);
+  margin-top: 1rem;
+}
+div.underline-checkout-first{
+  height: 1px;
+  width: 100%;
+  background:  rgba(220, 220, 220, 1);
+  margin-top: 2rem;
+}
+
+div.last-hori-rule{
+  height: 1px;
+  width: 100%;
+  background:  rgba(220, 220, 220, 1);
+  margin-top: 10px;
+}
+
+
+div.btn-cont
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  
+
+}
+
+div button{
+  width: 389px;
+height: 56px;
+padding: 16px 20px 16px 20px;
+gap: 10px;
+border-radius: 5px;
+opacity: 0px;
+border: none;
+color: #fff;
+font-size: 16px;
+background: rgba(35, 166, 240, 1);
+cursor: pointer;
+
+}
+
+
+div.mastercard-container{
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+/* the order summary endss  */
+
+div.table-header {
+  width: 100%;
+  height: 56px;
+  padding: 16px 40px 17px 24px;
+  border-radius: 4px 4px 0px 0px;
+  background: rgba(59, 65, 72, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+div.subtable-header {
+  display: flex;
+  align-items: center;
+  gap: 7.5rem;
+}
+
+div.subtable-body {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+div.table-content {
+  width: 100%;
+  height: 75px;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* left: 24px;
+  gap: 40px; */
+  /* border: 1px solid black; */
+}
+
+div.image-section {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+div.image {
+  width: 100px;
+  height: 75px;
+  background: burlywood;
+}
+
+div.star-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+p.in-stock {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.004em;
+  text-align: left;
+  color: rgba(43, 165, 1, 1);
+  margin-top: 5px;
+}
+
+h4.title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14.63px;
+  letter-spacing: 0.004em;
+  text-align: left;
+}
+
+p.review-no {
+  font-family: Lato;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 9.6px;
+  letter-spacing: 0.004em;
+  text-align: left;
+}
+span.review-no {
+  margin-right: 4px;
+}
+
+/* the add and subtract/quantity section starts here */
+div.add-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  /* border: 1px solid black; */
+}
+
+div.minus,
+div.plus {
+  height: 28px;
+  width: 28px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(232, 234, 236, 1);
+}
+
+div.plus {
+  background: rgba(35, 166, 240, 1);
+  color: white;
+}
+
+div.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+h6.h6 {
+  margin-top: 16px;
+}
+
+/* actual figure/price starts here */
+div.price- {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+
+  padding-right: 5px;
+}
+
+div.amount-container {
+  display: flex;
+  align-items: center;
+  color: black;
+  /* border: 1px solid black; */
+}
+div.amount-containerr {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  font-size: 12px;
+  /* padding-right: 5px; */
+  gap: 2px;
+  color: rgba(108, 108, 108, 1);
+}
+
+div.multi-container {
+  display: flex;
+  font-size: 12px;
+}
+
+/* delete here */
+
+div.delete-div {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14.4px;
+  letter-spacing: 0.004em;
+  text-align: left;
+  color: rgba(35, 166, 240, 1);
+  cursor: pointer;
+}
+
+div.div-line {
+  margin-top: 5px;
+  background: rgba(220, 220, 220, 1);
+  height: 1px;
+  width: 100%;
+}
+
+p.remove {
+  margin-left: 4px;
+}

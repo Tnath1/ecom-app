@@ -100,10 +100,12 @@ const Nav = () => {
             </div>
             <div className="search-container">
               <BsSearch />
-              <div className="cart-icon">
-                <BsCartDash />
-                <p>1</p>
-              </div>
+              <Link to="/cart">
+                <div className="cart-icon">
+                  <BsCartDash />
+                  <p>0</p>
+                </div>
+              </Link>
               <div className="hrt-icon">
                 <IoMdHeartEmpty />
                 <p>1</p>
