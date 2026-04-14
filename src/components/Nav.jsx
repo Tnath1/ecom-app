@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { MdLocalPhone } from "react-icons/md";
 import { LuMail } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
@@ -32,6 +33,9 @@ const Nav = () => {
   };
 
   const location = useLocation();
+  const cartCount = useSelector((state) =>
+    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+  );
   const isShopActive =
     location.pathname === "/shop" || location.pathname.startsWith("/product/");
 
@@ -123,7 +127,7 @@ const Nav = () => {
               <Link to="/cart">
                 <div className="cart-icon">
                   <BsCartDash />
-                  <p>0</p>
+                  <p>{cartCount}</p>
                 </div>
               </Link>
               <div className="hrt-icon">

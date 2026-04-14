@@ -3,7 +3,7 @@ div.cart-container {
   margin: 0 auto;
   /* border: 1px solid red; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 54px;
 }
@@ -19,8 +19,8 @@ div.cart-bestseller {
 
 div.shopping-cart {
   width: 654px;
-  height: 638px;
-  padding: 32px 32px 0px 32px;
+  min-height: 638px;
+  padding: 32px 32px 24px 32px;
   border-radius: 5px;
   /* border: 1px solid blue; */
   background: white;
@@ -28,8 +28,8 @@ div.shopping-cart {
 
 div.order-summary {
   width: 451px;
-  height: 638px;
-  padding: 32px 32px 0px 32px;
+  min-height: 638px;
+  padding: 32px 32px 24px 32px;
   border-radius: 5px;
   /* border: 1px solid green; */
   background-color: white;
@@ -158,7 +158,7 @@ div.btn-cont
 
 }
 
-div button{
+div.btn-cont button{
   width: 389px;
 height: 56px;
 padding: 16px 20px 16px 20px;
@@ -171,6 +171,11 @@ font-size: 16px;
 background: rgba(35, 166, 240, 1);
 cursor: pointer;
 
+}
+
+div.btn-cont button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 
@@ -226,7 +231,15 @@ div.image-section {
 div.image {
   width: 100px;
   height: 75px;
-  background: burlywood;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(244, 244, 244, 1);
+}
+
+div.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 div.star-container {
@@ -273,8 +286,7 @@ div.add-container {
   /* border: 1px solid black; */
 }
 
-div.minus,
-div.plus {
+button.quantity-control {
   height: 28px;
   width: 28px;
   border: none;
@@ -286,7 +298,7 @@ div.plus {
   background: rgba(232, 234, 236, 1);
 }
 
-div.plus {
+button.quantity-control.plus {
   background: rgba(35, 166, 240, 1);
   color: white;
 }
@@ -361,4 +373,54 @@ div.div-line {
 
 p.remove {
   margin-left: 4px;
+}
+
+div.cart-empty-state {
+  padding: 48px 0 16px;
+  text-align: center;
+}
+
+div.cart-empty-state h3 {
+  color: rgba(37, 43, 66, 1);
+  margin-bottom: 12px;
+}
+
+div.cart-empty-state p {
+  color: rgba(115, 115, 115, 1);
+}
+
+@media (max-width: 1100px) {
+  div.cart-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  div.shopping-cart,
+  div.order-summary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  div.table-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    height: auto;
+  }
+
+  div.subtable-body {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  div.subtable-header {
+    gap: 2rem;
+  }
+
+  div.btn-cont button {
+    width: 100%;
+  }
 }

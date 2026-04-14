@@ -1,7 +1,6 @@
 import "./css/productDetails.css";
-import React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BestSeller from "./BestSeller";
 import aws from "../components/componenticon/aws-icon.png";
 import hooli from "../components/componenticon/hooli-icon.png";
@@ -13,11 +12,19 @@ import emptyStar from "../components/imgcomponent/empty-star.png";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCartDash } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
+import { addToCart } from "../data/cartSlice";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
   const product = products.find((product) => product.id === parseInt(id));
+
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch(addToCart(product));
+    }
+  };
 
   if (!product)
     return (
@@ -107,11 +114,13 @@ const ProductDetail = () => {
 
                 <div className="prd-detail-icon-container">
                   <div className="pd-btn">
-                    <button className="select">Select Options</button>
+                    <button className="select" onClick={handleAddToCart}>
+                      Add To Cart
+                    </button>
                   </div>
                   <div className="product-icon-main-containe">
                     <IoMdHeartEmpty />
-                    <BsCartDash />
+                    <BsCartDash onClick={handleAddToCart} />
                     <IoEyeSharp />
                   </div>
                 </div>
