@@ -11,6 +11,11 @@ div.cart-icon {
   color: rgba(35, 166, 240, 1);
 }
 
+.logo-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .nav-link {
   position: relative;
   display: inline-flex;
