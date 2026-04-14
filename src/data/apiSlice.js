@@ -12,7 +12,12 @@ const productsSlice = createSlice({
       state.items = action.payload;
     },
     appendProducts: (state, action) => {
-      state.items = [...state.items, ...action.payload];
+      const existingIds = new Set(state.items.map((item) => item.id));
+      const uniqueProducts = action.payload.filter(
+        (item) => !existingIds.has(item.id)
+      );
+
+      state.items = [...state.items, ...uniqueProducts];
     },
     setHasMore: (state, action) => {
       state.hasMore = action.payload;

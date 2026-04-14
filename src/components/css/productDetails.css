@@ -190,6 +190,11 @@ div.pd-btn button.select {
   cursor: pointer;
 }
 
+div.pd-btn button.select:disabled {
+  background: rgba(35, 166, 240, 0.45);
+  cursor: not-allowed;
+}
+
 div.prd-detail-icon-container {
   display: flex;
   align-items: center;
@@ -201,6 +206,16 @@ div.product-icon-main-containe {
   gap: 1rem;
   font-size: 25px;
   cursor: pointer;
+}
+
+.liked-product-icon {
+  color: rgba(231, 91, 91, 1);
+}
+
+.disabled-icon {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 div.background-pd-details {

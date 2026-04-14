@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { MdLocalPhone } from "react-icons/md";
 import { LuMail } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
@@ -32,6 +33,10 @@ const Nav = () => {
   };
 
   const location = useLocation();
+  const cartCount = useSelector((state) => state.cart.items.length);
+  const likedCount = useSelector((state) => state.liked.items.length);
+  const isShopActive =
+    location.pathname === "/shop" || location.pathname.startsWith("/product/");
 
   useEffect(() => {
     setNavVisible(false);
@@ -68,18 +73,36 @@ const Nav = () => {
             <div className={`list-container ${navVisible ? "visible" : ""}`}>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) =>
+                      `nav-link${isActive ? " active-link" : ""}`
+                    }
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/product/:id">
+                  <NavLink
+                    to="/shop"
+                    className={`nav-link${isShopActive ? " active-link" : ""}`}
+                  >
                     <div className="shop-container">
                       <p>Shop</p>
                       <MdOutlineKeyboardArrowDown />
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link>About</Link>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `nav-link${isActive ? " active-link" : ""}`
+                    }
+                  >
+                    About
+                  </NavLink>
                 </li>
                 {/* <li>
                   <Link>Blog</Link>
@@ -103,13 +126,15 @@ const Nav = () => {
               <Link to="/cart">
                 <div className="cart-icon">
                   <BsCartDash />
-                  <p>0</p>
+                  <p>{cartCount}</p>
                 </div>
               </Link>
-              <div className="hrt-icon">
-                <IoMdHeartEmpty />
-                <p>1</p>
-              </div>
+              <Link to="/loved">
+                <div className="hrt-icon">
+                  <IoMdHeartEmpty />
+                  <p>{likedCount}</p>
+                </div>
+              </Link>
             </div>
             <div className="Handmenu">
               <div className="search-flex">

@@ -24,8 +24,11 @@ import { Provider } from "react-redux";
 import { store } from "./data/Store.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home"; 
+import About from "./components/About";
 import ProductDetail from "./components/ProductDetail"; 
 import Cart from "./components/Cart.jsx";
+import Loved from "./components/Loved.jsx";
+import Shop from "./components/Shop";
 
 
 const router = createBrowserRouter([
@@ -34,6 +37,9 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "", element: <Home /> },
+      { path: "shop", element: <Shop /> },
+      { path: "about", element: <About /> },
+      { path: "loved", element: <Loved /> },
       { path: "product/:id", element: <ProductDetail /> },
       { path: "/cart", element: <Cart/> },
       // Add more routes as needed
