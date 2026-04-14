@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdLocalPhone } from "react-icons/md";
 import { LuMail } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
@@ -32,6 +32,8 @@ const Nav = () => {
   };
 
   const location = useLocation();
+  const isShopActive =
+    location.pathname === "/shop" || location.pathname.startsWith("/product/");
 
   useEffect(() => {
     setNavVisible(false);
@@ -68,18 +70,36 @@ const Nav = () => {
             <div className={`list-container ${navVisible ? "visible" : ""}`}>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) =>
+                      `nav-link${isActive ? " active-link" : ""}`
+                    }
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/product/:id">
+                  <NavLink
+                    to="/shop"
+                    className={`nav-link${isShopActive ? " active-link" : ""}`}
+                  >
                     <div className="shop-container">
                       <p>Shop</p>
                       <MdOutlineKeyboardArrowDown />
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link>About</Link>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `nav-link${isActive ? " active-link" : ""}`
+                    }
+                  >
+                    About
+                  </NavLink>
                 </li>
                 {/* <li>
                   <Link>Blog</Link>
