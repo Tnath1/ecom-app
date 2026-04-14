@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "../components/css/signupLogin.css";
 import { FaUserAlt } from "react-icons/fa";
 import { AiTwotoneMail } from "react-icons/ai";
 import { RiLockPasswordFill } from "react-icons/ri";
 
 const SignInLogin = ({ isOpen, onClose }) => {
-  const [action, setAction] = useState("Sign Up");
-  const [name, setName] = useState("");
-    const [errors, setErrors] = useState({});
-  
+  const [action, setAction] = useState("Login");
 
-
+  useEffect(() => {
+    if (isOpen) {
+      setAction("Login");
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -20,85 +21,63 @@ const SignInLogin = ({ isOpen, onClose }) => {
     }
   };
 
-
-
-  // Validation logic for name input
-  const validateName = () => {
-    if (!name.trim()) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        name: "Name is required",
-      }));
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        name: "",
-      }));
-    }
-  };
-
-  const handleSubmit = () => {
-    validateName();
-    // Add further validation or submission logic here
-  };
-
   return (
     <div className="modal-backdrop" onClick={handleBackdropClick}>
       <div className="modal-content">
         <div className="header">
-          <h2 className="text"> {action} </h2>
+          <h2 className="text">{action}</h2>
           <div className="underline"></div>
         </div>
+
         <div className="inputs">
-        {action === "Login" ? null : (
-          <div className="input">
-            <FaUserAlt className="icon" />
-            <input
-              type="text"
-              placeholder="Enter name"
-              // value={name}
-              // onChange={(e) => setName(e.target.value)}
-              // onBlur={validateName} 
-            />
-            
-          </div>
-        )}
-         {/* {errors.name && <p className="error">{errors.name}</p>} */}
+          {action === "Sign Up" && (
+            <div className="input">
+              <FaUserAlt className="icon" />
+              <input type="text" placeholder="Enter name" />
+            </div>
+          )}
 
           <div className="input">
             <AiTwotoneMail className="icon" />
-            <input type="text" placeholder="enter email" />
+            <input type="email" placeholder="Enter email" />
           </div>
+
           <div className="input">
             <RiLockPasswordFill className="icon" />
-            <input type="text" placeholder="enter password" />
+            <input type="password" placeholder="Enter password" />
           </div>
+          {action === "Login" && (
+            <div className="forgot_password">
+              Forgot password? <span>Click here</span>
+            </div>
+          )}
         </div>
-        {action === "Sign Up" ? (
-          <div></div>
-        ) : (
-          <div className="forgot_password">
-            forgot password? <span>click here</span>
-          </div>
-        )}
 
         <div className="submit_container">
-          <button
-            className={action === "Sign Up" ? "submit " : "submit  gray "}
-            onClick={() => {
-              setAction("Sign Up");
+          <button type="button" className="submit inactive-submit" disabled>
+            {action}
+          </button>
+        </div>
+
+        <div className="auth-switch-copy">
+          {action === "Login"
+            ? "Don't have an account?"
+            : "Already have an account?"}
+          <span
+            className="auth-switch-button"
+            role="button"
+            tabIndex={0}
+            onClick={() =>
+              setAction(action === "Login" ? "Sign Up" : "Login")
+            }
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                setAction(action === "Login" ? "Sign Up" : "Login");
+              }
             }}
           >
-            Sign Up
-          </button>
-          <button
-            className={action === "Login" ? "submit " : "submit  gray"}
-            onClick={() => {
-              setAction("Login");
-            }}
-          >
-            Login
-          </button>
+            {action === "Login" ? "Sign Up" : "Login"}
+          </span>
         </div>
       </div>
     </div>
@@ -106,103 +85,3 @@ const SignInLogin = ({ isOpen, onClose }) => {
 };
 
 export default SignInLogin;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from "react";
-// import "../components/css/signupLogin.css";
-// import { FaUserAlt } from "react-icons/fa";
-
-// const SignInLogin = ({ isOpen, onClose }) => {
-//   const [action, setAction] = useState("Sign Up");
-//  
-//   if (!isOpen) return null;
-
-//   const handleBackdropClick = (e) => {
-//     if (e.target === e.currentTarget) {
-//       onClose();
-//     }
-//   };
-
-//   // Validation logic for name input
-//   const validateName = () => {
-//     if (!name.trim()) {
-//       setErrors((prevErrors) => ({
-//         ...prevErrors,
-//         name: "Name is required",
-//       }));
-//     } else {
-//       setErrors((prevErrors) => ({
-//         ...prevErrors,
-//         name: "",
-//       }));
-//     }
-//   };
-
-//   const handleSubmit = () => {
-//     validateName();
-//     // Add further validation or submission logic here
-//   };
-
-//   return (
-//     <div className="modal-backdrop" onClick={handleBackdropClick}>
-//       <div className="modal-content">
-//         <div className="header">
-//           <h2 className="text"> {action} </h2>
-//           <div className="underline"></div>
-//         </div>
-
-//         {action === "Login" ? null : (
-//           <div className="input">
-//             <FaUserAlt className="icon" />
-//             <input
-//               type="text"
-//               placeholder="Enter name"
-//               value={name}
-//               onChange={(e) => setName(e.target.value)}
-//               onBlur={validateName} // Validate when user leaves the input field
-//             />
-            
-//           </div>
-//         )}
-//        
-
-//         <div className="submit_container">
-//           <button
-//             className={action === "Sign Up" ? "submit" : "submit gray"}
-//             onClick={() => setAction("Sign Up")}
-//           >
-//             Sign Up
-//           </button>
-//           <button
-//             className={action === "Login" ? "submit" : "submit gray"}
-//             onClick={() => setAction("Login")}
-//           >
-//             Login
-//           </button>
-//         </div>
-
-//         <div className="submit_button">
-//           <button onClick={handleSubmit}>Submit</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SignInLogin;

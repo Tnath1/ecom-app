@@ -21,6 +21,10 @@
     text-align: center;
   }
 
+  .modal-content button {
+    font: inherit;
+  }
+
   .header{
     display: flex;
     flex-direction: column;
@@ -45,10 +49,10 @@
     
   }
   .inputs{
-    margin-top: 55px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
 
   .input{
@@ -78,10 +82,13 @@ div.input input{
 }
 
 div.forgot_password{
-  margin-left: -90px;
-  margin-top: 27px;
+  margin-top: -4px;
   color: #797979;
-  font-size: 18px;
+  font-size: 16px;
+  text-align: right;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.forgot_password span{
@@ -89,17 +96,34 @@ div.forgot_password span{
   cursor: pointer;
 }
 
+div.auth-switch-copy {
+  margin-top: 20px;
+  color: #797979;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+span.auth-switch-button {
+  color: rgb(114, 194, 240);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 5px;
+  display: inline;
+}
+
  div.submit_container{
   display: flex;
   gap: 30px;
-  margin: 40px auto;
+  margin: 28px auto 0;
   justify-content: center;
   align-items: center;
  }
 
 
 div.submit_container .submit {
-   width: 160px;
+   width: 350px;
    height: 59px;
    color: #fff;
    background-color: rgba(35, 166, 240, 1);
@@ -115,6 +139,11 @@ div.submit_container .submit {
 div.submit_container .gray{
   background: #eaeaea;
   color: #676767 ;
+}
+
+div.submit_container .inactive-submit {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 p.error {
