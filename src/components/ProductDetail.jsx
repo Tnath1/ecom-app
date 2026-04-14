@@ -18,10 +18,14 @@ const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
+  const cartItems = useSelector((state) => state.cart.items);
   const product = products.find((product) => product.id === parseInt(id));
+  const isInCart = cartItems.some(
+    (cartItem) => cartItem.id === parseInt(id, 10)
+  );
 
   const handleAddToCart = () => {
-    if (product) {
+    if (product && !isInCart) {
       dispatch(addToCart(product));
     }
   };
@@ -114,13 +118,20 @@ const ProductDetail = () => {
 
                 <div className="prd-detail-icon-container">
                   <div className="pd-btn">
-                    <button className="select" onClick={handleAddToCart}>
-                      Add To Cart
+                    <button
+                      className="select"
+                      onClick={handleAddToCart}
+                      disabled={isInCart}
+                    >
+                      {isInCart ? "Added To Cart" : "Add To Cart"}
                     </button>
                   </div>
                   <div className="product-icon-main-containe">
                     <IoMdHeartEmpty />
-                    <BsCartDash onClick={handleAddToCart} />
+                    <BsCartDash
+                      className={isInCart ? "product-cart-icon disabled-icon" : ""}
+                      onClick={handleAddToCart}
+                    />
                     <IoEyeSharp />
                   </div>
                 </div>

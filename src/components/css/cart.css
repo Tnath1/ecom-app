@@ -303,6 +303,11 @@ button.quantity-control.plus {
   color: white;
 }
 
+button.quantity-control:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 div.result {
   display: flex;
   justify-content: center;

@@ -33,9 +33,7 @@ const Nav = () => {
   };
 
   const location = useLocation();
-  const cartCount = useSelector((state) =>
-    state.cart.items.reduce((total, item) => total + item.quantity, 0)
-  );
+  const cartCount = useSelector((state) => state.cart.items.length);
   const isShopActive =
     location.pathname === "/shop" || location.pathname.startsWith("/product/");
 

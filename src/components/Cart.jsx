@@ -19,7 +19,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cartItems.length;
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -84,6 +84,7 @@ const Cart = () => {
                         <button
                           type="button"
                           className="quantity-control minus"
+                          disabled={item.quantity === 1}
                           onClick={() => dispatch(decrementQuantity(item.id))}
                         >
                           <FiMinus />
