@@ -9,24 +9,35 @@ import random from "../components/componenticon/random-icon.png";
 import strip from "../components/componenticon/strip-icon.png";
 import filledStar from "../components/imgcomponent/filled-star.png";
 import emptyStar from "../components/imgcomponent/empty-star.png";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import { BsCartDash } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
 import { addToCart } from "../data/cartSlice";
+import { toggleLikedProduct } from "../data/likedSlice";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
   const cartItems = useSelector((state) => state.cart.items);
+  const likedItems = useSelector((state) => state.liked.items);
   const product = products.find((product) => product.id === parseInt(id));
   const isInCart = cartItems.some(
     (cartItem) => cartItem.id === parseInt(id, 10)
+  );
+  const isLiked = likedItems.some(
+    (likedItem) => likedItem.id === parseInt(id, 10)
   );
 
   const handleAddToCart = () => {
     if (product && !isInCart) {
       dispatch(addToCart(product));
+    }
+  };
+
+  const handleToggleLiked = () => {
+    if (product) {
+      dispatch(toggleLikedProduct(product));
     }
   };
 
@@ -127,7 +138,14 @@ const ProductDetail = () => {
                     </button>
                   </div>
                   <div className="product-icon-main-containe">
-                    <IoMdHeartEmpty />
+                    {isLiked ? (
+                      <IoMdHeart
+                        className="liked-product-icon"
+                        onClick={handleToggleLiked}
+                      />
+                    ) : (
+                      <IoMdHeartEmpty onClick={handleToggleLiked} />
+                    )}
                     <BsCartDash
                       className={isInCart ? "product-cart-icon disabled-icon" : ""}
                       onClick={handleAddToCart}

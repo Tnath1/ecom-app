@@ -22,8 +22,10 @@ const Cart = () => {
   const totalItems = cartItems.length;
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
+  const tax = subtotal * 0.05;
+  const total = subtotal + tax;
 
   const renderStars = (rating) => {
     const filledCount = Math.round(rating || 0);
@@ -153,13 +155,6 @@ const Cart = () => {
               </div>
             </div>
 
-            <div className="h2-container-sec">
-              <h2 className="heading-two">Order summary</h2>
-              <p className="red-p">
-                Add your delivery
-                <br /> address to checkout to <br /> see delivery charges.
-              </p>
-            </div>
             <div className="underline-checkout-first"></div>
             <div className="h2-container-sec">
               <h2 className="heading-three">Subtotal</h2>
@@ -169,9 +164,16 @@ const Cart = () => {
             </div>
             <div className="underline-checkout"></div>
             <div className="h2-container-sec">
+              <h2 className="heading-three">Tax Fee</h2>
+              <p>
+                $ <span>{tax.toFixed(2)}</span>
+              </p>
+            </div>
+            <div className="underline-checkout"></div>
+            <div className="h2-container-sec">
               <h2 className="heading-four">Total</h2>
               <p className="total-amnt">
-                $ <span>{subtotal.toFixed(2)}</span>
+                $ <span>{total.toFixed(2)}</span>
               </p>
             </div>
             <div className="underline-checkout"></div>
@@ -183,7 +185,9 @@ const Cart = () => {
             </div>
           </div>
           <div className="btn-cont">
-            <button disabled={cartItems.length === 0}>Proceed to Checkout</button>
+            <button disabled={cartItems.length === 0}>
+              Proceed to Checkout
+            </button>
           </div>
 
           <div className="last-hori-rule"></div>
@@ -196,7 +200,7 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart-bestseller">
-        <BestSeller />
+        {/* <BestSeller /> */}
       </div>
     </div>
   );

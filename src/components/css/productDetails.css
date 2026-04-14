@@ -208,6 +208,10 @@ div.product-icon-main-containe {
   cursor: pointer;
 }
 
+.liked-product-icon {
+  color: rgba(231, 91, 91, 1);
+}
+
 .disabled-icon {
   opacity: 0.4;
   cursor: not-allowed;

@@ -34,6 +34,7 @@ const Nav = () => {
 
   const location = useLocation();
   const cartCount = useSelector((state) => state.cart.items.length);
+  const likedCount = useSelector((state) => state.liked.items.length);
   const isShopActive =
     location.pathname === "/shop" || location.pathname.startsWith("/product/");
 
@@ -128,10 +129,12 @@ const Nav = () => {
                   <p>{cartCount}</p>
                 </div>
               </Link>
-              <div className="hrt-icon">
-                <IoMdHeartEmpty />
-                <p>1</p>
-              </div>
+              <Link to="/loved">
+                <div className="hrt-icon">
+                  <IoMdHeartEmpty />
+                  <p>{likedCount}</p>
+                </div>
+              </Link>
             </div>
             <div className="Handmenu">
               <div className="search-flex">
