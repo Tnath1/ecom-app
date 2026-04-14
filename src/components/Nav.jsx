@@ -69,7 +69,9 @@ const Nav = () => {
       <nav>
         <div className="main-nav-container">
           <div className="logo-wrapper">
-            <h1 className="Logo">Bandage</h1>
+            <Link to="/" className="logo-link">
+              <h1 className="Logo">Bandage</h1>
+            </Link>
             <div className={`list-container ${navVisible ? "visible" : ""}`}>
               <ul>
                 <li>

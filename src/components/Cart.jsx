@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../components/css/cart.css";
 import filledStar from "../components/imgcomponent/filled-star.png";
@@ -8,8 +9,9 @@ import Visa from "../components/imgcomponent/Visa Inc. - png.png";
 import { AiOutlineDelete } from "react-icons/ai";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
-import BestSeller from "./BestSeller";
+import { IoCheckmark, IoClose } from "react-icons/io5";
 import {
+  clearCart,
   decrementQuantity,
   incrementQuantity,
   removeFromCart,
@@ -18,14 +20,79 @@ import {
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [paymentStatus, setPaymentStatus] = useState("idle");
+  const [paymentDetails, setPaymentDetails] = useState({
+    name: "",
+    email: "",
+    number: "",
+    expiry: "",
+    cvv: "",
+  });
+  const [paymentSummary, setPaymentSummary] = useState({
+    items: 0,
+    total: 0,
+  });
 
   const totalItems = cartItems.length;
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0,
+    0
   );
   const tax = subtotal * 0.05;
   const total = subtotal + tax;
+
+  useEffect(() => {
+    if (paymentStatus !== "processing") {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      dispatch(clearCart());
+      setPaymentStatus("success");
+    }, 1800);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [paymentStatus]);
+
+  const handleCheckoutOpen = () => {
+    if (cartItems.length === 0) {
+      return;
+    }
+
+    setIsPaymentOpen(true);
+    setPaymentStatus("idle");
+  };
+
+  const handlePaymentClose = () => {
+    setIsPaymentOpen(false);
+    setPaymentStatus("idle");
+    setPaymentDetails({
+      name: "",
+      email: "",
+      number: "",
+      expiry: "",
+      cvv: "",
+    });
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    setPaymentDetails((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const handlePaymentSubmit = (event) => {
+    event.preventDefault();
+    setPaymentSummary({
+      items: totalItems,
+      total,
+    });
+    setPaymentStatus("processing");
+  };
 
   const renderStars = (rating) => {
     const filledCount = Math.round(rating || 0);
@@ -147,7 +214,7 @@ const Cart = () => {
         <div className="order-summary">
           <div className="summary-container">
             <div className="h2-container">
-              <h2 className=" heading-one">Order summary</h2>
+              <h2 className="heading-one">Order summary</h2>
               <div className="sumary-child">
                 <p>
                   <span>{totalItems}</span> items
@@ -185,7 +252,11 @@ const Cart = () => {
             </div>
           </div>
           <div className="btn-cont">
-            <button disabled={cartItems.length === 0}>
+            <button
+              type="button"
+              disabled={cartItems.length === 0}
+              onClick={handleCheckoutOpen}
+            >
               Proceed to Checkout
             </button>
           </div>
@@ -199,9 +270,167 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="cart-bestseller">
-        {/* <BestSeller /> */}
-      </div>
+      <div className="cart-bestseller"></div>
+
+      {isPaymentOpen && (
+        <div className="payment-modal-backdrop" onClick={handlePaymentClose}>
+          <div
+            className="payment-modal"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="payment-modal-header">
+              <div>
+                <p className="payment-modal-label">Demo Checkout</p>
+                <h2>Secure payment preview</h2>
+              </div>
+              <button
+                type="button"
+                className="payment-close-button"
+                onClick={handlePaymentClose}
+                aria-label="Close payment modal"
+              >
+                <IoClose />
+              </button>
+            </div>
+
+            {paymentStatus === "success" ? (
+              <div className="payment-success-state">
+                <div className="payment-success-icon">
+                  <IoCheckmark />
+                </div>
+                <h3>Payment approved</h3>
+                <p>
+                  This was a demo payment simulation. No real transaction was
+                  made and no card was charged.
+                </p>
+                <div className="payment-success-summary">
+                  <div>
+                    <span>Total paid</span>
+                    <strong>${paymentSummary.total.toFixed(2)}</strong>
+                  </div>
+                  <div>
+                    <span>Items processed</span>
+                    <strong>{paymentSummary.items}</strong>
+                  </div>
+                  <div>
+                    <span>Reference</span>
+                    <strong>BDG-DEMO-2026</strong>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="payment-primary-button"
+                  onClick={handlePaymentClose}
+                >
+                  Back to Cart
+                </button>
+              </div>
+            ) : (
+              <div className="payment-modal-body">
+                <div className="payment-card-panel">
+                  <div className="payment-chip-row">
+                    <span className="payment-chip">Card</span>
+                    <div className="payment-brand-row">
+                      <img src={Paystack} alt="Paystack" />
+                      <img src={Master} alt="Mastercard" />
+                      <img src={Visa} alt="Visa" />
+                    </div>
+                  </div>
+                  <p className="payment-demo-note">
+                    Demo mode only. Fill the form to simulate a successful
+                    checkout experience.
+                  </p>
+                  <div className="payment-total-row">
+                    <span>Amount to pay</span>
+                    <strong>${total.toFixed(2)}</strong>
+                  </div>
+                </div>
+
+                <form className="payment-form" onSubmit={handlePaymentSubmit}>
+                  <div className="payment-field-group">
+                    <label htmlFor="payment-name">Cardholder name</label>
+                    <input
+                      id="payment-name"
+                      name="name"
+                      type="text"
+                      placeholder="Arome Ukpoju"
+                      value={paymentDetails.name}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="payment-field-group">
+                    <label htmlFor="payment-email">Email address</label>
+                    <input
+                      id="payment-email"
+                      name="email"
+                      type="email"
+                      placeholder="name@example.com"
+                      value={paymentDetails.email}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="payment-field-group">
+                    <label htmlFor="payment-number">Card number</label>
+                    <input
+                      id="payment-number"
+                      name="number"
+                      type="text"
+                      inputMode="numeric"
+                      placeholder="4242 4242 4242 4242"
+                      value={paymentDetails.number}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="payment-inline-fields">
+                    <div className="payment-field-group">
+                      <label htmlFor="payment-expiry">Expiry</label>
+                      <input
+                        id="payment-expiry"
+                        name="expiry"
+                        type="text"
+                        placeholder="08/28"
+                        value={paymentDetails.expiry}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="payment-field-group">
+                      <label htmlFor="payment-cvv">CVV</label>
+                      <input
+                        id="payment-cvv"
+                        name="cvv"
+                        type="password"
+                        inputMode="numeric"
+                        placeholder="123"
+                        value={paymentDetails.cvv}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="payment-primary-button"
+                    disabled={paymentStatus === "processing"}
+                  >
+                    {paymentStatus === "processing"
+                      ? "Processing Payment..."
+                      : `Pay $${total.toFixed(2)}`}
+                  </button>
+                </form>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

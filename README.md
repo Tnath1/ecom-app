@@ -1,72 +1,110 @@
 # eCommerce App
 
-This project is a simple eCommerce web application built using React, and React Redux Toolkit. It allows users to browse products, add them to a cart, and manage their shopping cart.
+A React + Vite storefront app that uses Redux Toolkit for product, cart, and liked-product state.
 
-## Table of Contents
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
+The app currently supports product browsing from the DummyJSON API, product detail pages, a global cart flow, a liked-products flow, and shared navigation/footer across the main pages.
 
-## Technologies Used
+## Tech Stack
 
-This project uses the following technologies:
+- React 18
+- Vite 5
+- Redux Toolkit
+- RTK Query
+- React Redux
+- React Router DOM
+- React Icons
 
-- **React (v18.2.0)**: JavaScript library for building user interfaces.
-- **Redux Toolkit (v2.2.5)**: State management solution.
-- **React Redux (v9.1.2)**: Integration of Redux with React.
-- **React Router DOM (v6.23.1)**: Client-side routing.
-- **React Icons (v5.2.1)**: Popular icons as React components.
+## Current Features
 
-## Features
+- Browse products fetched from `https://dummyjson.com/`
+- View individual product detail pages
+- Add products to cart from the product detail page
+- See live cart count in the nav
+- Manage cart quantities on the cart page
+- View subtotal, 5% tax fee, and total in the order summary
+- Like and unlike products from the product detail page
+- View all liked products on a dedicated loved page
+- Shared `Nav` and `Footer` across routed pages
+- Active nav underline animation for `Home`, `Shop`, and `About`
 
-- **Product Listing**: Display a list of products.
-- **Add to Cart**: Users can add products to their shopping cart.
-- **View Cart**: View the contents of the cart and manage quantities.
-- **Routing**: Navigate between different sections of the app.
-- **State Management**: Manage global state using Redux Toolkit.
+## Routes
 
-## Installation
+- `/` - Home page
+- `/shop` - Product listing page
+- `/about` - About page
+- `/product/:id` - Product detail page
+- `/cart` - Cart page
+- `/loved` - Liked products page
+
+## State Management
+
+Redux Toolkit is used in three main ways:
+
+- `productApi` uses RTK Query to fetch products from DummyJSON
+- `products` stores the fetched product list used across pages
+- `cart` stores cart items and quantity updates
+- `liked` stores liked products and toggles by product id
+
+## Project Structure
+
+```text
+src/
+  components/
+    About.jsx
+    Cart.jsx
+    Home.jsx
+    Loved.jsx
+    Nav.jsx
+    ProductDetail.jsx
+    Shop.jsx
+    css/
+  data/
+    apiSlice.js
+    cartSlice.js
+    likedSlice.js
+    product.api.js
+    Store.js
+```
+
+## Getting Started
 
 ### Prerequisites
 
-Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+Make sure you have Node.js installed.
 
-### Steps
+### Install
 
-1. Clone the repository:
+```bash
+npm install
+```
 
-   ```bash
-   git clone https://github.com/Tnath1/ecom-app.git
-   cd ecommerce-app
-2. Install the dependencies:
-   ```bash
-   npm install
-3. Run the app in development mode:
-    ```bash
-    npm run dev
-## Contributing
+### Start the dev server
 
-Contributions are welcome! If you'd like to make improvements, feel free to fork the repository and submit a pull request.
+```bash
+npm run dev
+```
 
-1. **Fork the project**: Click the "Fork" button at the top right of the repository page.
-   
-2. **Create a feature branch**: 
-   ```bash
-   git checkout -b feature-branch
-3. **Commit your changes:**: 
-   ```bash
-   git commit -m "Add a feature"
-2. **Push to the branch:**: 
-   ```bash
-   git push origin feature-branch
-2. **Open a pull request**:  Go to the original repository and click on the "Pull Request" button, then submit your pull request for review.
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+## Notes
+
+- The sign up / login modal is currently UI-only and is not connected to a backend yet.
+- Products are loaded from DummyJSON, while cart and liked-product state are managed locally in Redux.
+- Cart quantity changes affect item quantity, while the nav cart badge reflects the number of distinct products in cart.
 
 ## Author
 
-This project was created and maintained by [Arome Ukpoju](###).
+Created and maintained by Arome Ukpoju.
 
-Feel free to reach out at [aromejonathanu@gmail.com](mailto:aromejonathanu@gmail.com) for any questions or collaborations.
+For questions or collaboration:
+`aromejonathanu@gmail.com`

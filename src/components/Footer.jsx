@@ -89,9 +89,8 @@ const Footer = () => {
               <h4>Get in Touch</h4>
               <div className="input">
                 <input type="email" placeholder="Your Email" />
-                <button>Subscribe</button>
+                <button type="button">Subscribe</button>
               </div>
-              <p>Lore imp sum dolor Amit</p>
             </div>
           </div>
         </div>
