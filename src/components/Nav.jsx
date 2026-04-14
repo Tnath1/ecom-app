@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MdLocalPhone } from "react-icons/md";
 import { LuMail } from "react-icons/lu";
@@ -81,7 +81,7 @@ const Nav = () => {
                 <li>
                   <Link>About</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link>Blog</Link>
                 </li>
                 <li>
@@ -89,7 +89,7 @@ const Nav = () => {
                 </li>
                 <li>
                   <Link>Pages</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
