@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Modification
+
 const likedSlice = createSlice({
   name: "liked",
   initialState: {
